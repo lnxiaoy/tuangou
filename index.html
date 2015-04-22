@@ -16,7 +16,26 @@
       <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style type="text/css">
-    .close {}
+    #a1 {
+        background: url("img/sc.jpg");
+        height: 35px;
+        width: 40px;
+        background-position: -40px -35px;
+        background-repeat: no-repeat;
+    }
+    
+    .list-group-item {
+        width: 280px;
+    }
+    
+    dl {
+        padding-left: 10px;
+    }
+    
+    dd {
+        padding-top: 5px;
+        padding-left: 20px;
+    }
     </style>
 </head>
 
@@ -67,6 +86,130 @@
             <li data-slide-to="2" data-target="#carousel-container" class="active"></li>
         </ol>
     </div>
+    <div class="container">
+        <div class="row">
+            <div class="h1 text-info col-md-3">LOGO团购演示</div>
+            <div class="col-md-9">
+                <div class="row">&nbsp;</div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <a href=""><strong>西安</strong></a>
+                        <button class="btn-default btn dropdown-toggle" data-toggle="dropdown">切换城市<span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="">北京</a></li>
+                            <li><a href="">上海</a></li>
+                            <li><a href="">深圳</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="input-group">
+                            <div class="input-group-btn">
+                                <button class="btn-default btn dropdown-toggle" data-toggle="dropdown">商家<span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="">商品</a></li>
+                                    <li><a href="">商品</a></li>
+                                    <li><a href="">商品</a></li>
+                                </ul>
+                            </div>
+                            <input class="form-control" type="text" placeholder="请输入商品名称"></input>
+                            <div class="input-group-btn">
+                                <button class="btn-default btn">搜索</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-md-offset-1">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div id="a1"></div><span>随时退</span></div>
+                            <div class="col-md-4">
+                                <div id="a1"></div><span>随时退</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar-default navbar container">
+        <div class="col-md-3 open"><a href="" data-toggle="dropdown" class="dropdown-toggle navbar-brand">全部分类</a>
+            <div class="dropdown-menu list-group table">
+                <dl class="table1">
+                    <dt><span class="glyphicon glyphicon-tint"></span>&nbsp;<strong>美食</strong></dt>
+                    <dd><a href="">面食</a>&nbsp;<a href="">西餐</a>&nbsp;<a href="">快餐</a>&nbsp;<a href="">日韩料理</a>&nbsp;<span class="pull-right glyphicon-chevron-right glyphicon"></span></dd>
+                    <div class="side1" style="padding:0 0 15px 15px;background-color:#fff;border:1px solid rgba(0,0,0,0.15);border-radius:4px;width:300px;left:282px;position: absolute;top:0px;display:none;">
+                        <h4>美食</h4>
+                        <p><a href="">面食</a>&nbsp;<a href="">西餐</a>&nbsp;<a href="">快餐</a>&nbsp;<a href="">日韩料理</a>&nbsp;</p>
+                    </div>
+                </dl>
+                <li class="divider"></li>
+                <dl class="table2">
+                    <dt><span class="glyphicon glyphicon-tint"></span>&nbsp;<strong>外卖</strong></dt>
+                    <dd><a href="">面食</a>&nbsp;<a href="">西餐</a>&nbsp;<a href="">快餐</a>&nbsp;<a href="">日韩料理</a>&nbsp;<span class="pull-right glyphicon-chevron-right glyphicon"></span></dd>
+                    <div class="side2" style="padding:0 0 15px 15px;background-color:#fff;border:1px solid rgba(0,0,0,0.15);border-radius:4px;width:300px;left:282px;position: absolute;top:70px;display:none;">
+                        <h4>美食</h4>
+                        <p><a href="">面食</a>&nbsp;<a href="">西餐</a>&nbsp;<a href="">快餐</a>&nbsp;<a href="">日韩料理</a>&nbsp;</p>
+                    </div>
+                </dl>
+                <li class="divider"></li>
+                <dl class="table3">
+                    <dt><span class="glyphicon glyphicon-tint"></span>&nbsp;<strong>购物</strong></dt>
+                    <dd><a href="">面食</a>&nbsp;<a href="">西餐</a>&nbsp;<a href="">快餐</a>&nbsp;<a href="">日韩料理</a>&nbsp;<span class="pull-right glyphicon-chevron-right glyphicon"></span></dd>
+                    <div class="side3" style="padding:0 0 15px 15px;background-color:#fff;border:1px solid rgba(0,0,0,0.15);border-radius:4px;width:300px;left:282px;position: absolute;top:145px;display:none;">
+                        <h4>美食</h4>
+                        <p><a href="">面食</a>&nbsp;<a href="">西餐</a>&nbsp;<a href="">快餐</a>&nbsp;<a href="">日韩料理</a>&nbsp;</p>
+                    </div>
+                </dl>
+                <li class="divider"></li>
+                <dl class="table4">
+                    <dt><span class="glyphicon glyphicon-tint"></span>&nbsp;<strong>酒店</strong></dt>
+                    <dd><a href="">面食</a>&nbsp;<a href="">西餐</a>&nbsp;<a href="">快餐</a>&nbsp;<a href="">日韩料理</a>&nbsp;<span class="pull-right glyphicon-chevron-right glyphicon"></span></dd>
+                    <div class="side4" style="padding:0 0 15px 15px;background-color:#fff;border:1px solid rgba(0,0,0,0.15);border-radius:4px;width:300px;left:282px;position: absolute;top:220px;display:none;">
+                        <h4>美食</h4>
+                        <p><a href="">面食</a>&nbsp;<a href="">西餐</a>&nbsp;<a href="">快餐</a>&nbsp;<a href="">日韩料理</a>&nbsp;</p>
+                    </div>
+                </dl>
+            </div>
+        </div>
+        <ul class="navbar-nav nav">
+            <li class="active"><a href="">首页</a></li>
+            <li><a href="">商家</a></li>
+            <li><a href="">团购预告</a></li>
+            <li><a href="">限时抢购</a></li>
+            <li><a href="">下载客户端</a></li>
+            <li><a href="">邀请有奖</a></li>
+            <li><a href="">团购论坛</a></li>
+        </ul>
+    </nav>
+    <div class="container" style="background-color:#;height:200px;">
+        <div class="col-md-7 col-md-offset-3" style="background-color:#;">
+            <span class="glyphicon glyphicon-tint"></span>&nbsp;&nbsp;热门团购：<a href="">电影</a>&nbsp;&nbsp;<a href="">甜品饮品</a>&nbsp;&nbsp;<a href="">外卖</a>&nbsp;&nbsp;<a href="">配镜</a>&nbsp;&nbsp;<a href="">电器/数码</a>&nbsp;&nbsp;<a href="">境外游</a>&nbsp;&nbsp;<a href="">酒店</a>&nbsp;&nbsp;<a href="">抽奖</a>&nbsp;&nbsp;<a href=""><a href="">丽人</a>&nbsp;&nbsp;<a href="">电子代金券</a>&nbsp;&nbsp;<a href="">青年旅舍</a>
+            <hr>
+            <span class="glyphicon glyphicon-tint"></span>&nbsp;&nbsp;热门团购：<a href="">电影</a>&nbsp;&nbsp;<a href="">甜品饮品</a>&nbsp;&nbsp;<a href="">外卖</a>&nbsp;&nbsp;<a href="">配镜</a>&nbsp;&nbsp;<a href="">电器/数码</a>&nbsp;&nbsp;<a href="">境外游</a>&nbsp;&nbsp;<a href="">酒店</a>&nbsp;&nbsp;<a href="">抽奖</a>&nbsp;&nbsp;<a href=""><a href="">丽人</a>&nbsp;&nbsp;<a href="">电子代金券</a>&nbsp;&nbsp;<a href="">青年旅舍</a>
+            <hr>
+            <span class="glyphicon glyphicon-tint"></span>&nbsp;&nbsp;热门团购：<a href="">电影</a>&nbsp;&nbsp;<a href="">甜品饮品</a>&nbsp;&nbsp;<a href="">外卖</a>&nbsp;&nbsp;<a href="">配镜</a>&nbsp;&nbsp;<a href="">电器/数码</a>&nbsp;&nbsp;<a href="">境外游</a>&nbsp;&nbsp;<a href="">酒店</a>&nbsp;&nbsp;<a href="">抽奖</a>&nbsp;&nbsp;<a href=""><a href="">丽人</a>&nbsp;&nbsp;<a href="">电子代金券</a>&nbsp;&nbsp;<a href="">青年旅舍</a>
+            <hr>
+            <h4>本周推荐团购</h4>
+            <div class="carousel slide" data-ride="carousel" id="carou" data-interval="2000">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="img/tree.jpg">
+
+                            <span>【限时抢购】100元代金券</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-danger ">￥79     购买</span>
+
+
+                    </div>
+                    <div class="item"><img src="img/tree.jpg"></div>
+                    <div class="item"><img src="img/tree.jpg"></div>
+                </div>
+                <ol class="carousel-indicators" style="position:absolute;top:-30px;left:600px;">
+                    <li data-slide-to="0" data-target="#carou" class="active"></li>
+                    <li data-slide-to="1" data-target="#carou"></li>
+                    <li data-slide-to="2" data-target="#carou"></li>
+                </ol>
+                <a class="carousel-control left" href="#carou" data-slide="prev"><span class="glyphicon-chevron-left glyphicon"></span></a>
+                <a class="carousel-control right" style="z-index:19;"href="#carou" data-slide="next"><span class="glyphicon-chevron-right glyphicon"></span></a>
+            </div>
+        </div>
+    </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -75,6 +218,38 @@
 <script type="text/javascript">
 $(".close").on('click', function(event) {
     $("#carousel-container").hide();
+});
+$(".table1").on('mouseover', function(event) {
+    //alert("1")
+    $(".side1").show();
+});
+$(".table1").on('mouseout', function(event) {
+    //alert("1")
+    $(".side1").hide();
+});
+$(".table2").on('mouseover', function(event) {
+    //alert("1")
+    $(".side2").show();
+});
+$(".table2").on('mouseout', function(event) {
+    //alert("1")
+    $(".side2").hide();
+});
+$(".table3").on('mouseover', function(event) {
+    //alert("1")
+    $(".side3").show();
+});
+$(".table3").on('mouseout', function(event) {
+    //alert("1")
+    $(".side3").hide();
+});
+$(".table4").on('mouseover', function(event) {
+    //alert("1")
+    $(".side4").show();
+});
+$(".table4").on('mouseout', function(event) {
+    //alert("1")
+    $(".side4").hide();
 });
 </script>
 
