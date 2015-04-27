@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>团购演示</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+    #a1 {
+        background: url("img/sc.jpg");
+        height: 35px;
+        width: 40px;
+        background-position: -40px -35px;
+        background-repeat: no-repeat;
+    }
+    
+    .list-group-item {
+        width: 280px;
+    }
+    
+    dl {
+        padding-left: 10px;
+    }
+    
+    dd {
+        padding-top: 5px;
+        padding-left: 20px;
+    }
+    
+    .list-group-item.active {
+        width: 200px;
+    }
+    
+    .list-group-item:hover {
+        width: 200px;
+    }
+    
+    .list-group-item:visited {
+        width: 200px;
+    }
+    
+    .list-group-item:link {
+        width: 200px;
+    }
+    
+    .list-group-item {
+        width: 200px;
+    }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <ul class="navbar-nav nav navavr-left">
+                <li><a href=""><span class="glyphicon-envelope glyphicon"></span>&nbsp;邮件订阅</a></li>
+                <li><a href=""><span class="glyphicon-phone glyphicon"></span>&nbsp;手机订阅</a></li>
+                <li><a href=""><span class="glyphicon-search glyphicon"></span>&nbsp;团购券查询</a></li>
+            </ul>
+            <ul class="navbar-right navbar-nav nav">
+                <li><a href="">登陆</a></li>
+                <li><a href="">注册</a></li>
+                <li class="dropdown"><a class="dropdown-toggle" href="" data-toggle="dropdown">&nbsp;最近浏览<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="">123</a></li>
+                        <li><a href="">123</a></li>
+                        <li><a href="">123</a></li>
+                        <li class="divider"></li>
+                        <li class="pull-right"><a href="">清空浏览记录</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href=""><span class="glyphicon-shopping-cart glyphicon"></span>&nbsp;购物车&nbsp;<strong class="text-danger">0</strong>件</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="">123</a></li>
+                        <li><a href="">123</a></li>
+                        <li><a href="">123</a></li>
+                        <li class="divider"></li>
+                        <li class="pull-right"><a href="">清空浏览记录</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="h1 text-info col-md-3">LOGO团购演示</div>
+            <div class="col-md-9">
+                <div class="row">&nbsp;</div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <a href=""><strong>西安</strong></a>
+                        <button class="btn-default btn dropdown-toggle" data-toggle="dropdown">切换城市<span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="">北京</a></li>
+                            <li><a href="">上海</a></li>
+                            <li><a href="">深圳</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="input-group">
+                            <div class="input-group-btn">
+                                <button class="btn-default btn dropdown-toggle" data-toggle="dropdown">商家<span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="">商品</a></li>
+                                    <li><a href="">商品</a></li>
+                                    <li><a href="">商品</a></li>
+                                </ul>
+                            </div>
+                            <input class="form-control" type="text" placeholder="请输入商品名称"></input>
+                            <div class="input-group-btn">
+                                <button class="btn-default btn">搜索</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-md-offset-1">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div id="a1"></div><span>随时退</span></div>
+                            <div class="col-md-4">
+                                <div id="a1"></div><span>随时退</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar-default navbar container">
+        <div class="col-md-3" id="nav1"><a href="" data-toggle="dropdown" class="dropdown-toggle navbar-brand">全部分类</a>
+            <div class="dropdown-menu list-group table" style="position:absolute;top:48px;">
+                <dl class="table1">
+                    <dt><span class="glyphicon glyphicon-tint"></span>&nbsp;<strong>美食</strong></dt>
+                    <dd><a href="">面食</a>&nbsp;<a href="">西餐</a>&nbsp;<a href="">快餐</a>&nbsp;<a href="">日韩料理</a>&nbsp;<span class="pull-right glyphicon-chevron-right glyphicon"></span></dd>
+                    <div class="side1" style="padding:0 0 15px 15px;background-color:#fff;border:1px solid rgba(0,0,0,0.15);border-radius:4px;width:300px;left:282px;position: absolute;top:0px;display:none;">
+                        <h4>美食</h4>
+                        <p><a href="">面食</a>&nbsp;<a href="">西餐</a>&nbsp;<a href="">快餐</a>&nbsp;<a href="">日韩料理</a>&nbsp;</p>
+                    </div>
+                </dl>
+                <li class="divider"></li>
+                <dl class="table2">
+                    <dt><span class="glyphicon glyphicon-tint"></span>&nbsp;<strong>外卖</strong></dt>
+                    <dd><a href="">面食</a>&nbsp;<a href="">西餐</a>&nbsp;<a href="">快餐</a>&nbsp;<a href="">日韩料理</a>&nbsp;<span class="pull-right glyphicon-chevron-right glyphicon"></span></dd>
+                    <div class="side2" style="padding:0 0 15px 15px;background-color:#fff;border:1px solid rgba(0,0,0,0.15);border-radius:4px;width:300px;left:282px;position: absolute;top:70px;display:none;">
+                        <h4>美食</h4>
+                        <p><a href="">面食</a>&nbsp;<a href="">西餐</a>&nbsp;<a href="">快餐</a>&nbsp;<a href="">日韩料理</a>&nbsp;</p>
+                    </div>
+                </dl>
+                <li class="divider"></li>
+                <dl class="table3">
+                    <dt><span class="glyphicon glyphicon-tint"></span>&nbsp;<strong>购物</strong></dt>
+                    <dd><a href="">面食</a>&nbsp;<a href="">西餐</a>&nbsp;<a href="">快餐</a>&nbsp;<a href="">日韩料理</a>&nbsp;<span class="pull-right glyphicon-chevron-right glyphicon"></span></dd>
+                    <div class="side3" style="padding:0 0 15px 15px;background-color:#fff;border:1px solid rgba(0,0,0,0.15);border-radius:4px;width:300px;left:282px;position: absolute;top:145px;display:none;">
+                        <h4>美食</h4>
+                        <p><a href="">面食</a>&nbsp;<a href="">西餐</a>&nbsp;<a href="">快餐</a>&nbsp;<a href="">日韩料理</a>&nbsp;</p>
+                    </div>
+                </dl>
+                <li class="divider"></li>
+                <dl class="table4">
+                    <dt><span class="glyphicon glyphicon-tint"></span>&nbsp;<strong>酒店</strong></dt>
+                    <dd><a href="">面食</a>&nbsp;<a href="">西餐</a>&nbsp;<a href="">快餐</a>&nbsp;<a href="">日韩料理</a>&nbsp;<span class="pull-right glyphicon-chevron-right glyphicon"></span></dd>
+                    <div class="side4" style="padding:0 0 15px 15px;background-color:#fff;border:1px solid rgba(0,0,0,0.15);border-radius:4px;width:300px;left:282px;position: absolute;top:220px;display:none;">
+                        <h4>美食</h4>
+                        <p><a href="">面食</a>&nbsp;<a href="">西餐</a>&nbsp;<a href="">快餐</a>&nbsp;<a href="">日韩料理</a>&nbsp;</p>
+                    </div>
+                </dl>
+            </div>
+        </div>
+        <ul class="navbar-nav nav">
+            <li class="active"><a href="">首页</a></li>
+            <li><a href="">商家</a></li>
+            <li><a href="">团购预告</a></li>
+            <li><a href="">限时抢购</a></li>
+            <li><a href="">下载客户端</a></li>
+            <li><a href="">邀请有奖</a></li>
+            <li><a href="">团购论坛</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="col-md-3" style="border-right:1px solid #ccc;">
+            <div class="container col-md-8 list-group">
+                <h4>商家账户</h4>
+                <a href="#" class="list-group-item  " style="border:0px;">累计销售额:<span style="color:#ff886f">1111</span></a>
+                <a href="#" class="list-group-item  " style="border:0px;">总结算金额:<span style="color:#ff886f">1111</span></a>
+                <a href="#" class="list-group-item  " style="border:0px;">可结算金额:<span style="color:#ff886f">1111</span></a>
+            </div>
+            <div class="container list-group col-md-8">
+                <h4>我的产品</h4>
+                <a href="#" class="list-group-item active " style="border:0px;">产品列表</a>
+                <a href="#" class="list-group-item" style="border:0px;">订单列表</a>
+                <a href="#" class="list-group-item" style="border:0px;">团购券列表</a>
+                <a href="#" class="list-group-item" style="border:0px;">发货清单</a>
+                <a href="#" class="list-group-item" style="border:0px;">申请结算</a>
+                <a href="#" class="list-group-item" style="border:0px;">结算金额明细</a>
+                <a href="#" class="list-group-item" style="border:0px;">我的评价</a>
+            </div>
+            <div class="container list-group col-md-8">
+                <h4>常见问题</h4>
+                <div class="list-group-item" style="border:0px;">
+                    <h5 class="list-item-heading">什么是累计销售额？</h5>
+                    <p class="list-item-text">是指该商家所有卖出产品的总计销售额=各产品单价*卖出的产品数量的总和；注意因为用户购买了可能没去消费，所以此值>=用户实际确认消费过的金额>=总结算金额。</p>
+                </div>
+                <div class="list-group-item" style="border:0px;">
+                    <h5 class="list-item-heading">什么是总结算金额？</h5>
+                    <p class="list-item-text">即商家实际的销售收入=用户实际确认消费过的总金额-“给网站的分成后”（如果有的话）的金额。</p>
+                </div>
+                <div class="list-group-item" style="border:0px;">
+                    <h5 class="list-item-heading">什么是可结算金额？</h5>
+                    <p class="list-item-text">即商家剩余的待结算的金额=总结算金额-已结算金额。</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <select class="">
+                <option>产品名称</option>
+            </select>
+            <input placeholder="请输入要查询的商品名称">
+            <button class="btn-primary btn btn-sm">搜索</button>
+            <span>筛选：产品状态</span>
+            <select class="">
+                <option>全部数据</option>
+                <option>即将过期产品</option>
+                <option>已经过期产品</option>
+                <option>已成团</option>
+                <option>未成团</option>
+                <option>全部数据</option>
+            </select>
+            <span>显示区域</span>
+            <select class="">
+                <option>全部数据</option>
+                <option>全部数据</option>
+                <option>全部数据</option>
+                <option>全部数据</option>
+                <option>全部数据</option>
+                <option>全部数据</option>
+            </select>
+            <div class="row">
+                <table class="table table-bordered table-hover" style="text-align:center;">
+                    <thead style="background-color:#ccc;">
+                        <th style="text-align:center;">产品名称</th>
+                        <th style="text-align:center;">销售情况</th>
+                        <th style="text-align:center;">商品状态</th>
+                        <th style="text-align:center;">购买/售出/库存</th>
+                        <th style="text-align:center;">运行状态</th>
+                        <th style="text-align:center;">管理</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>【30件包邮】
+                                <br>上架时间：2014-12-29&nbsp;17:32
+                                <br>下架时间：2015-12-29&nbsp;17:32 </td>
+                            <td>总额：222元
+                                <br>有效：111元</td>
+                            <td>已发货：5<a href="">(明细)</a>
+                                <br>待发货:3
+                                <br>已收件:2
+                                <br>
+                            </td>
+                            <td>购买：12人
+                                <br>售出：10份
+                                <br>库存：9999</td>
+                            <td>已结束，团购成功</td>
+                            <td><a href="">相关订单</a></td>
+                        </tr>
+                        <tr>
+                            <td>【30件包邮】
+                                <br>上架时间：2014-12-29&nbsp;17:32
+                                <br>下架时间：2015-12-29&nbsp;17:32 </td>
+                            <td>总额：222元
+                                <br>有效：111元</td>
+                            <td>已发货：5<a href="">(明细)</a>
+                                <br>待发货:3
+                                <br>已收件:2
+                                <br>
+                            </td>
+                            <td>购买：12人
+                                <br>售出：10份
+                                <br>库存：9999</td>
+                            <td>已结束，团购成功</td>
+                            <td><a href="">相关订单</a></td>
+                        </tr>
+                        <tr>
+                            <td>【30件包邮】
+                                <br>上架时间：2014-12-29&nbsp;17:32
+                                <br>下架时间：2015-12-29&nbsp;17:32 </td>
+                            <td>总额：222元
+                                <br>有效：111元</td>
+                            <td>已发货：5<a href="">(明细)</a>
+                                <br>待发货:3
+                                <br>已收件:2
+                                <br>
+                            </td>
+                            <td>购买：12人
+                                <br>售出：10份
+                                <br>库存：9999</td>
+                            <td>已结束，团购成功</td>
+                            <td><a href="">相关订单</a></td>
+                        </tr>
+                        <tr>
+                            <td>【30件包邮】
+                                <br>上架时间：2014-12-29&nbsp;17:32
+                                <br>下架时间：2015-12-29&nbsp;17:32 </td>
+                            <td>总额：222元
+                                <br>有效：111元</td>
+                            <td>已发货：5<a href="">(明细)</a>
+                                <br>待发货:3
+                                <br>已收件:2
+                                <br>
+                            </td>
+                            <td>购买：12人
+                                <br>售出：10份
+                                <br>库存：9999</td>
+                            <td>已结束，团购成功</td>
+                            <td><a href="">相关订单</a></td>
+                        </tr>
+                        <tr>
+                            <td>【30件包邮】
+                                <br>上架时间：2014-12-29&nbsp;17:32
+                                <br>下架时间：2015-12-29&nbsp;17:32 </td>
+                            <td>总额：222元
+                                <br>有效：111元</td>
+                            <td>已发货：5<a href="">(明细)</a>
+                                <br>待发货:3
+                                <br>已收件:2
+                                <br>
+                            </td>
+                            <td>购买：12人
+                                <br>售出：10份
+                                <br>库存：9999</td>
+                            <td>已结束，团购成功</td>
+                            <td><a href="">相关订单</a></td>
+                        </tr>
+                        <tr>
+                            <td>【30件包邮】
+                                <br>上架时间：2014-12-29&nbsp;17:32
+                                <br>下架时间：2015-12-29&nbsp;17:32 </td>
+                            <td>总额：222元
+                                <br>有效：111元</td>
+                            <td>已发货：5<a href="">(明细)</a>
+                                <br>待发货:3
+                                <br>已收件:2
+                                <br>
+                            </td>
+                            <td>购买：12人
+                                <br>售出：10份
+                                <br>库存：9999</td>
+                            <td>已结束，团购成功</td>
+                            <td><a href="">相关订单</a></td>
+                        </tr>
+                        <tr>
+                            <td>【30件包邮】
+                                <br>上架时间：2014-12-29&nbsp;17:32
+                                <br>下架时间：2015-12-29&nbsp;17:32 </td>
+                            <td>总额：222元
+                                <br>有效：111元</td>
+                            <td>已发货：5<a href="">(明细)</a>
+                                <br>待发货:3
+                                <br>已收件:2
+                                <br>
+                            </td>
+                            <td>购买：12人
+                                <br>售出：10份
+                                <br>库存：9999</td>
+                            <td>已结束，团购成功</td>
+                            <td><a href="">相关订单</a></td>
+                        </tr>
+                        <tr>
+                            <td>【30件包邮】
+                                <br>上架时间：2014-12-29&nbsp;17:32
+                                <br>下架时间：2015-12-29&nbsp;17:32 </td>
+                            <td>总额：222元
+                                <br>有效：111元</td>
+                            <td>已发货：5<a href="">(明细)</a>
+                                <br>待发货:3
+                                <br>已收件:2
+                                <br>
+                            </td>
+                            <td>购买：12人
+                                <br>售出：10份
+                                <br>库存：9999</td>
+                            <td>已结束，团购成功</td>
+                            <td><a href="">相关订单</a></td>
+                        </tr>
+                        <tr>
+                            <td>【30件包邮】
+                                <br>上架时间：2014-12-29&nbsp;17:32
+                                <br>下架时间：2015-12-29&nbsp;17:32 </td>
+                            <td>总额：222元
+                                <br>有效：111元</td>
+                            <td>已发货：5<a href="">(明细)</a>
+                                <br>待发货:3
+                                <br>已收件:2
+                                <br>
+                            </td>
+                            <td>购买：12人
+                                <br>售出：10份
+                                <br>库存：9999</td>
+                            <td>已结束，团购成功</td>
+                            <td><a href="">相关订单</a></td>
+                        </tr>
+                        <tr>
+                            <td>【30件包邮】
+                                <br>上架时间：2014-12-29&nbsp;17:32
+                                <br>下架时间：2015-12-29&nbsp;17:32 </td>
+                            <td>总额：222元
+                                <br>有效：111元</td>
+                            <td>已发货：5<a href="">(明细)</a>
+                                <br>待发货:3
+                                <br>已收件:2
+                                <br>
+                            </td>
+                            <td>购买：12人
+                                <br>售出：10份
+                                <br>库存：9999</td>
+                            <td>已结束，团购成功</td>
+                            <td><a href="">相关订单</a></td>
+                        </tr>
+                        <tr>
+                            <td>【30件包邮】
+                                <br>上架时间：2014-12-29&nbsp;17:32
+                                <br>下架时间：2015-12-29&nbsp;17:32 </td>
+                            <td>总额：222元
+                                <br>有效：111元</td>
+                            <td>已发货：5<a href="">(明细)</a>
+                                <br>待发货:3
+                                <br>已收件:2
+                                <br>
+                            </td>
+                            <td>购买：12人
+                                <br>售出：10份
+                                <br>库存：9999</td>
+                            <td>已结束，团购成功</td>
+                            <td><a href="">相关订单</a></td>
+                        </tr>
+                        <tr>
+                            <td>【30件包邮】
+                                <br>上架时间：2014-12-29&nbsp;17:32
+                                <br>下架时间：2015-12-29&nbsp;17:32 </td>
+                            <td>总额：222元
+                                <br>有效：111元</td>
+                            <td>已发货：5<a href="">(明细)</a>
+                                <br>待发货:3
+                                <br>已收件:2
+                                <br>
+                            </td>
+                            <td>购买：12人
+                                <br>售出：10份
+                                <br>库存：9999</td>
+                            <td>已结束，团购成功</td>
+                            <td><a href="">相关订单</a></td>
+                        </tr>
+                        <tr>
+                            <td>【30件包邮】
+                                <br>上架时间：2014-12-29&nbsp;17:32
+                                <br>下架时间：2015-12-29&nbsp;17:32 </td>
+                            <td>总额：222元
+                                <br>有效：111元</td>
+                            <td>已发货：5<a href="">(明细)</a>
+                                <br>待发货:3
+                                <br>已收件:2
+                                <br>
+                            </td>
+                            <td>购买：12人
+                                <br>售出：10份
+                                <br>库存：9999</td>
+                            <td>已结束，团购成功</td>
+                            <td><a href="">相关订单</a></td>
+                        </tr>
+                        <tr>
+                            <td>【30件包邮】
+                                <br>上架时间：2014-12-29&nbsp;17:32
+                                <br>下架时间：2015-12-29&nbsp;17:32 </td>
+                            <td>总额：222元
+                                <br>有效：111元</td>
+                            <td>已发货：5<a href="">(明细)</a>
+                                <br>待发货:3
+                                <br>已收件:2
+                                <br>
+                            </td>
+                            <td>购买：12人
+                                <br>售出：10份
+                                <br>库存：9999</td>
+                            <td>已结束，团购成功</td>
+                            <td><a href="">相关订单</a></td>
+                        </tr>
+                        <tr>
+                            <td>【30件包邮】
+                                <br>上架时间：2014-12-29&nbsp;17:32
+                                <br>下架时间：2015-12-29&nbsp;17:32 </td>
+                            <td>总额：222元
+                                <br>有效：111元</td>
+                            <td>已发货：5<a href="">(明细)</a>
+                                <br>待发货:3
+                                <br>已收件:2
+                                <br>
+                            </td>
+                            <td>购买：12人
+                                <br>售出：10份
+                                <br>库存：9999</td>
+                            <td>已结束，团购成功</td>
+                            <td><a href="">相关订单</a></td>
+                        </tr>
+                        <tr>
+                            <td>【30件包邮】
+                                <br>上架时间：2014-12-29&nbsp;17:32
+                                <br>下架时间：2015-12-29&nbsp;17:32 </td>
+                            <td>总额：222元
+                                <br>有效：111元</td>
+                            <td>已发货：5<a href="">(明细)</a>
+                                <br>待发货:3
+                                <br>已收件:2
+                                <br>
+                            </td>
+                            <td>购买：12人
+                                <br>售出：10份
+                                <br>库存：9999</td>
+                            <td>已结束，团购成功</td>
+                            <td><a href="">相关订单</a></td>
+                        </tr>
+                        <tr>
+                            <td>【30件包邮】
+                                <br>上架时间：2014-12-29&nbsp;17:32
+                                <br>下架时间：2015-12-29&nbsp;17:32 </td>
+                            <td>总额：222元
+                                <br>有效：111元</td>
+                            <td>已发货：5<a href="">(明细)</a>
+                                <br>待发货:3
+                                <br>已收件:2
+                                <br>
+                            </td>
+                            <td>购买：12人
+                                <br>售出：10份
+                                <br>库存：9999</td>
+                            <td>已结束，团购成功</td>
+                            <td><a href="">相关订单</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="row">
+                    <ul class="pagination">
+                        <li class="disabled"><a href="#">&laquo;</a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">&raquo;</a></li>
+                    </ul>
+                    <span style="position:absolute;top:1424px;margin-left:10px;">共34条记录，分为两页，每页17条</span>
+                    <div>* 说明：“有效交易额”，指的是所有已消费的团购券的价值（虚拟）或者已经发货的订单的价值（实物，不含运费）</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="border-top:1px solid #ccc;padding-top:20px;">
+        <div class="row">
+            <div class=" col-md-3 list-group" style="border-right:1px solid #ccc;width:210px;margin-right:20px;">
+                <h4>商务合作</h4>
+                <a href="#" class="list-group-item  " style="border:0px;">意见反馈</a>
+                <a href="#" class="list-group-item  " style="border:0px;">商务合作</a>
+                <a href="#" class="list-group-item  " style="border:0px;">开放API</a>
+            </div>
+            <div class=" col-md-3 list-group" style="border-right:1px solid #ccc;width:210px;margin-right:20px;">
+                <h4>如何团购</h4>
+                <a href="#" class="list-group-item  " style="border:0px;">意见反馈</a>
+                <a href="#" class="list-group-item  " style="border:0px;">商务合作</a>
+            </div>
+            <div class=" col-md-3 list-group" style="border-right:1px solid #ccc;width:210px;margin-right:20px;">
+                <h4>联系我们</h4>
+                <a href="#" class="list-group-item  " style="border:0px;">在线问答</a>
+            </div>
+            <div class=" col-md-3 list-group" style="border-right:1px solid #ccc;width:210px;margin-right:20px;">
+                <h4>公司信息</h4>
+                <a href="#" class="list-group-item  " style="border:0px;">关于我们</a>
+                <a href="#" class="list-group-item  " style="border:0px;">商务合作</a>
+                <a href="#" class="list-group-item  " style="border:0px;">开放API</a>
+            </div>
+            <p>LOGO</p>
+        </div>
+        <p class="text-center"> CopyRight © 2014 西安wangyou电子科技有限公司 All Rights Reserved.    陕ICP备14001244号 </p>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+<script type="text/javascript">
+$("#nav1").on('mouseover', function(event) {
+    this.className = "open col-md-3";
+    /* Act on the event */
+});
+$("#nav1").on('mouseout', function(event) {
+    this.className = "col-md-3";
+    /* Act on the event */
+});
+$(".table1").on('mouseover', function(event) {
+    //alert("1")
+    $(".side1").show();
+});
+$(".table1").on('mouseout', function(event) {
+    //alert("1")
+    $(".side1").hide();
+});
+$(".table2").on('mouseover', function(event) {
+    //alert("1")
+    $(".side2").show();
+});
+$(".table2").on('mouseout', function(event) {
+    //alert("1")
+    $(".side2").hide();
+});
+$(".table3").on('mouseover', function(event) {
+    //alert("1")
+    $(".side3").show();
+});
+$(".table3").on('mouseout', function(event) {
+    //alert("1")
+    $(".side3").hide();
+});
+$(".table4").on('mouseover', function(event) {
+    //alert("1")
+    $(".side4").show();
+});
+$(".table4").on('mouseout', function(event) {
+    //alert("1")
+    $(".side4").hide();
+});
+</script>
+
+</html>
