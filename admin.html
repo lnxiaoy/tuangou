@@ -68,8 +68,72 @@
                 <li><a href=""><span class="glyphicon-search glyphicon"></span>&nbsp;团购券查询</a></li>
             </ul>
             <ul class="navbar-right navbar-nav nav">
-                <li><a href="">登陆</a></li>
-                <li><a href="">注册</a></li>
+                <li id="nav_log"><a href="#mylogin" data-toggle="modal">登陆</a></li>
+                <div class="modal fade" id="mylogin">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">登陆</h4>
+                            </div>
+                            <div class="modal-body">
+                                <form action="login.php" id="mylogin_1" method="post">
+                                    <div class="form-group">
+                                        <label>用户名：</label>
+                                        <input type="text" class="form-control" placeholder="请输入用户名：" name="login_name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>密码：</label>
+                                        <input type="password" class="form-control" placeholder="请输入密码：" name="login_pass">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <span id="msg_log"></span>
+                                <input type="submit" class="btn btn-primary" value="登陆" id="login">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <li><a href="#myregister" data-toggle="modal">注册</a></li>
+                <div class="modal fade" id="myregister">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">注册</h4>
+                            </div>
+                            <div class="modal-body">
+                                <form action="test.php" method="post" id="myreg">
+                                    <div class="form-group has-feedback">
+                                        <label>用户名：*</label><span>用户名应该为3-20位之间</span>
+                                        <input type="text" class="form-control" placeholder="请输入用户名：" name="username">
+                                        <span class="glyphicon  form-control-feedback"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>密码：*</label><span>密码应该为6-20位之间</span>
+                                        <input type="password" class="form-control" placeholder="请输入密码：" name="password">
+                                        <span class="glyphicon  form-control-feedback"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>请再次输入密码：*</label><span>输入的确认密码要和上面的密码一致,规则也要相同</span>
+                                        <input type="password" class="form-control" placeholder="请输入密码：" name="repass">
+                                        <span class="glyphicon  form-control-feedback"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>请输入邮箱：*</label><span>请输入正确的EMAIL格式</span>
+                                        <input type="mail" class="form-control" placeholder="请输入邮箱：" name="email">
+                                        <span class="glyphicon  form-control-feedback"></span>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <span id="msg"></span>
+                                <input type="submit" class="btn btn-primary" value="注册" id="tj">
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <li class="dropdown"><a class="dropdown-toggle" href="" data-toggle="dropdown">&nbsp;最近浏览<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="">123</a></li>
@@ -195,9 +259,9 @@
             <div class="container list-group col-md-8">
                 <h4>我的产品</h4>
                 <a href="#" class="list-group-item active " style="border:0px;">产品列表</a>
-                <a href="#" class="list-group-item" style="border:0px;">订单列表</a>
+                <a href="?mod=seller&code=product&op=list" class="list-group-item" style="border:0px;">订单列表</a>
                 <a href="#" class="list-group-item" style="border:0px;">团购券列表</a>
-                <a href="#" class="list-group-item" style="border:0px;">发货清单</a>
+                <a href="#" class="list-group-item" style="border:0px;" id="sendlist">发货清单</a>
                 <a href="#" class="list-group-item" style="border:0px;">申请结算</a>
                 <a href="#" class="list-group-item" style="border:0px;">结算金额明细</a>
                 <a href="#" class="list-group-item" style="border:0px;">我的评价</a>
@@ -218,7 +282,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-9" id="refresh_html">
             <select class="">
                 <option>产品名称</option>
             </select>
@@ -258,8 +322,6 @@
                 <div class="row col-md-offset-1">
                     <ul class="pagination">
                         <li class="disabled"><a href="#">&laquo;</a></li>
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
                         <li><a href="#">&raquo;</a></li>
                     </ul>
                     <div id="page_info">共<span>0</span>条记录，分为<span>0</span>页，每页12条</div>
@@ -293,12 +355,13 @@
             </div>
             <p>LOGO</p>
         </div>
-        <p class="text-center"> CopyRight © 2014 西安wangyou电子科技有限公司 All Rights Reserved. 陕ICP备14001244号 </p>
+        <p class="text-center hidden"> CopyRight © 2014 西安wangyou电子科技有限公司 All Rights Reserved. 陕ICP备14001244号 </p>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-1.11.2.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.form.min.js"></script>
 </body>
 <script type="text/javascript">
 $.getJSON('res/count.json', function(json, textStatus) {
@@ -327,52 +390,204 @@ $.getJSON('res/product.json', function(json, textStatus) {
 
         });
         $("tbody>tr").eq(index).append('<td>' + val.run + '</td>');
-        $("tbody>tr").eq(index).append('<td>' + val.manage + '</td>');
-        $("#page_info").find('span').eq(0).text(index+1);
-        $("#page_info").find('span').eq(1).text(Math.ceil((index+1)/12));
+        $("tbody>tr").eq(index).append('<td><a href="#">' + val.manage + '</a></td>');
+        $("#page_info").find('span').eq(0).text(index + 1);
+        $("#page_info").find('span').eq(1).text(Math.ceil((index + 1) / 12));
+
+        page = Math.ceil((index + 1) / 12);
+
     });
 
+    for (var i = 1; i <= page; i++) {
+        $(".pagination>li").eq('-1').before('<li><a href="#">' + i + '</a></li>');
+    };
+    $(".pagination>li").eq('1').attr("class", "active");
 });
 
+var ok1 = 'false';
+var ok2 = 'false';
+var ok3 = 'false';
+var ok4 = 'false';
+
+$("input[name='username']").focus(function(event) {
+    $(this).prev("span").attr('class', 'text-primary');
+}).blur(function(event) {
+    if ($(this).val().length >= 3 && $(this).val().length <= 20 && $(this).val() != '') {
+        $(this).parent().attr('class', 'has-success form-group has-feedback');
+        $(this).next('span').attr('class', 'glyphicon glyphicon-ok form-control-feedback');
+        ok1 = 'true';
+    } else {
+        $(this).parent().attr('class', 'has-error form-group has-feedback')
+        $(this).next('span').attr('class', 'glyphicon glyphicon-remove form-control-feedback');
+    }
+});
+$("input[name='password']").focus(function(event) {
+    $(this).prev("span").attr('class', 'text-primary');
+}).blur(function(event) {
+    if ($(this).val().length >= 6 && $(this).val().length <= 20 && $(this).val() != '') {
+        $(this).parent().attr('class', 'has-success form-group has-feedback');
+        $(this).next('span').attr('class', 'glyphicon glyphicon-ok form-control-feedback');
+        ok2 = 'true';
+    } else {
+        $(this).parent().attr('class', 'has-error form-group has-feedback')
+        $(this).next('span').attr('class', 'glyphicon glyphicon-remove form-control-feedback');
+    }
+});
+$("input[name='repass']").focus(function(event) {
+    $(this).prev("span").attr('class', 'text-primary');
+}).blur(function(event) {
+    if ($(this).val() == $("input[name='password']").val()) {
+        $(this).parent().attr('class', 'has-success form-group has-feedback');
+        $(this).next('span').attr('class', 'glyphicon glyphicon-ok form-control-feedback');
+        ok3 = 'true';
+    } else {
+        $(this).parent().attr('class', 'has-error form-group has-feedback')
+        $(this).next('span').attr('class', 'glyphicon glyphicon-remove form-control-feedback');
+    }
+});
+$("input[name='email']").focus(function(event) {
+    $(this).prev("span").attr('class', 'text-primary');
+}).blur(function(event) {
+    var reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+    if (reg.test($(this).val())) {
+        $(this).parent().attr('class', 'has-success form-group has-feedback');
+        $(this).next('span').attr('class', 'glyphicon glyphicon-ok form-control-feedback');
+        ok4 = 'true';
+    } else {
+        $(this).parent().attr('class', 'has-error form-group has-feedback')
+        $(this).next('span').attr('class', 'glyphicon glyphicon-remove form-control-feedback');
+    }
+});
+
+
+$(document).ready(function() {
+    var options = {
+        target: '#msg',
+        beforeSubmit: showRequest,
+        success: showResponse,
+        dataType: 'json',
+        resetForm: true
+    };
+    var options1 = {
+        target: '#msg_log',
+        beforeSubmit: showRequest,
+        success: bbb,
+        dataType: 'json',
+        resetForm: true
+
+    };
+
+    // bind to the form's submit event 
+    /*$('#myreg').submit(function() { 
+        // inside event callbacks 'this' is the DOM element so we first 
+        // wrap it in a jQuery object and then invoke ajaxSubmit 
+        $(this).ajaxSubmit(options); 
+ 
+        // !!! Important !!! 
+        // always return false to prevent standard browser submit and page navigation 
+        return false; 
+    }); */
+    $('#tj').click(function() {
+        if (ok1 == 'true' && ok2 == 'true' && ok3 == 'true' && ok4 == 'true') {
+            $('#myreg').ajaxSubmit(options);
+        } else {
+            $("#msg").text('请重新填写');
+        }
+        //alert($('#myreg').formSerialize());
+        return false;
+
+    });
+    $('#login').click(function() {
+        $('#mylogin_1').ajaxSubmit(options1);
+        //alert($('#myreg').formSerialize());
+        return false;
+
+    });
+});
+
+
+function showRequest(formData, jqForm, options) {
+    //var queryString = $.param(formData); 
+    //alert('About to submit: \n\n' + queryString); 
+    //alert(formData);
+    return true;
+}
+
+function showResponse(responseText, statusText, xhr, $form) {
+    if (statusText == 'success') {
+        $("#msg").text('提交成功！');
+        alert("欢迎，" + responseText.name);
+        ok1 = 'false';
+        ok2 = 'false';
+        ok3 = 'false';
+        ok4 = 'false';
+        $('#myreg').find('span:odd').attr('class', 'glyphicon  form-control-feedback');
+        $('#myreg').find('div').attr('class', 'form-group has-feedback');
+        $("#myregister").modal('hide');
+    }
+}
+
+function bbb(responseText, statusText, xhr, $form) {
+    if (statusText == 'success') {
+        $("#msg_log").text('登陆成功！');
+        $("#mylogin").modal('hide');
+        //更新用户名和退出
+        //$("#nav_log>a").text('退出');
+        $("#nav_log").before('<li><a href="#">欢迎[' + responseText.login_name + ']</a></li>');
+        $("#nav_log").before('<li id="logout"><a href="/tuangou/admin.html">退出</a></li>');
+        $("#nav_log").remove();
+
+    }
+}
 $("#nav1").on('mouseover', function(event) {
     this.className = "open col-md-3";
-    /* Act on the event */
 });
 $("#nav1").on('mouseout', function(event) {
     this.className = "col-md-3";
-    /* Act on the event */
 });
 $(".table1").on('mouseover', function(event) {
-    //alert("1")
     $(".side1").show();
 });
 $(".table1").on('mouseout', function(event) {
-    //alert("1")
     $(".side1").hide();
 });
 $(".table2").on('mouseover', function(event) {
-    //alert("1")
     $(".side2").show();
 });
 $(".table2").on('mouseout', function(event) {
-    //alert("1")
     $(".side2").hide();
 });
 $(".table3").on('mouseover', function(event) {
-    //alert("1")
     $(".side3").show();
 });
 $(".table3").on('mouseout', function(event) {
-    //alert("1")
     $(".side3").hide();
 });
 $(".table4").on('mouseover', function(event) {
-    //alert("1")
     $(".side4").show();
 });
 $(".table4").on('mouseout', function(event) {
-    //alert("1")
     $(".side4").hide();
+});
+
+$("#sendlist").click(function(event) {
+$.ajax({
+    url: 'refresh.php',
+    //type: 'default GET (Other values: POST)',
+    dataType: 'html',
+    //data: {param1: 'value1'},
+})
+.done(function() {
+    console.log("success");
+    $("#refresh_html").html('hello world!');
+})
+.fail(function() {
+    console.log("error");
+})
+.always(function() {
+    console.log("complete");
+});
 });
 </script>
 

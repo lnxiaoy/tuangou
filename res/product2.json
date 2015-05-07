@@ -1,0 +1,51 @@
+{
+    "product": [{
+        "pro_name": {
+            "name": "【30件包邮】",
+            "time_on": "2014-12-29 17:32",
+            "time_down": "2015-12-29 17:32"
+        },
+        "count": {
+            "tt_count": "总额：838",
+            "av_count": "有效：490"
+        },
+        "state": {
+            "al_send": "已发货：9",
+            "re_send": "待发货：4",
+            "al_rece": "已收货：7"
+
+        },
+        "sold": {
+            "buy": "购买：12",
+            "sell": "售出：4",
+            "have": "库存：888"
+        },
+        "run": "已结束，团购成功",
+        "manage": "相关订单"
+    }, {
+        "pro_name": {
+            "name": "【30件包邮】",
+            "time_on": "2014-12-29 17:32",
+            "time_down": "2015-12-29 17:32"
+        },
+        "count": {
+            "tt_count": 838,
+            "av_count": 490
+        },
+        "state": {
+            "al_send": 9,
+            "re_send": 4,
+            "al_rece": 7
+
+        },
+        "sold": {
+            "buy": 12,
+            "sell": 4,
+            "have": 888
+        },
+        "run": "未开始",
+        "manage": "相关订单"
+    }]
+
+
+}
