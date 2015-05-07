@@ -396,6 +396,8 @@ $.getJSON('res/product.json', function(json, textStatus) {
 
         page = Math.ceil((index + 1) / 12);
 
+<<<<<<< HEAD
+=======
     });
 
     for (var i = 1; i <= page; i++) {
@@ -497,6 +499,117 @@ $(document).ready(function() {
         //alert($('#myreg').formSerialize());
         return false;
 
+>>>>>>> origin/master
+    });
+    $('#login').click(function() {
+        $('#mylogin_1').ajaxSubmit(options1);
+        //alert($('#myreg').formSerialize());
+        return false;
+
+<<<<<<< HEAD
+    for (var i = 1; i <= page; i++) {
+        $(".pagination>li").eq('-1').before('<li><a href="#">' + i + '</a></li>');
+    };
+    $(".pagination>li").eq('1').attr("class", "active");
+});
+
+var ok1 = 'false';
+var ok2 = 'false';
+var ok3 = 'false';
+var ok4 = 'false';
+
+$("input[name='username']").focus(function(event) {
+    $(this).prev("span").attr('class', 'text-primary');
+}).blur(function(event) {
+    if ($(this).val().length >= 3 && $(this).val().length <= 20 && $(this).val() != '') {
+        $(this).parent().attr('class', 'has-success form-group has-feedback');
+        $(this).next('span').attr('class', 'glyphicon glyphicon-ok form-control-feedback');
+        ok1 = 'true';
+    } else {
+        $(this).parent().attr('class', 'has-error form-group has-feedback')
+        $(this).next('span').attr('class', 'glyphicon glyphicon-remove form-control-feedback');
+    }
+});
+$("input[name='password']").focus(function(event) {
+    $(this).prev("span").attr('class', 'text-primary');
+}).blur(function(event) {
+    if ($(this).val().length >= 6 && $(this).val().length <= 20 && $(this).val() != '') {
+        $(this).parent().attr('class', 'has-success form-group has-feedback');
+        $(this).next('span').attr('class', 'glyphicon glyphicon-ok form-control-feedback');
+        ok2 = 'true';
+    } else {
+        $(this).parent().attr('class', 'has-error form-group has-feedback')
+        $(this).next('span').attr('class', 'glyphicon glyphicon-remove form-control-feedback');
+    }
+});
+$("input[name='repass']").focus(function(event) {
+    $(this).prev("span").attr('class', 'text-primary');
+}).blur(function(event) {
+    if ($(this).val() == $("input[name='password']").val()) {
+        $(this).parent().attr('class', 'has-success form-group has-feedback');
+        $(this).next('span').attr('class', 'glyphicon glyphicon-ok form-control-feedback');
+        ok3 = 'true';
+    } else {
+        $(this).parent().attr('class', 'has-error form-group has-feedback')
+        $(this).next('span').attr('class', 'glyphicon glyphicon-remove form-control-feedback');
+    }
+=======
+    });
+>>>>>>> origin/master
+});
+$("input[name='email']").focus(function(event) {
+    $(this).prev("span").attr('class', 'text-primary');
+}).blur(function(event) {
+    var reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+<<<<<<< HEAD
+    if (reg.test($(this).val())) {
+        $(this).parent().attr('class', 'has-success form-group has-feedback');
+        $(this).next('span').attr('class', 'glyphicon glyphicon-ok form-control-feedback');
+        ok4 = 'true';
+    } else {
+        $(this).parent().attr('class', 'has-error form-group has-feedback')
+        $(this).next('span').attr('class', 'glyphicon glyphicon-remove form-control-feedback');
+    }
+});
+
+
+$(document).ready(function() {
+    var options = {
+        target: '#msg',
+        beforeSubmit: showRequest,
+        success: showResponse,
+        dataType: 'json',
+        resetForm: true
+    };
+    var options1 = {
+        target: '#msg_log',
+        beforeSubmit: showRequest,
+        success: bbb,
+        dataType: 'json',
+        resetForm: true
+
+    };
+
+    // bind to the form's submit event 
+    /*$('#myreg').submit(function() { 
+        // inside event callbacks 'this' is the DOM element so we first 
+        // wrap it in a jQuery object and then invoke ajaxSubmit 
+        $(this).ajaxSubmit(options); 
+ 
+        // !!! Important !!! 
+        // always return false to prevent standard browser submit and page navigation 
+        return false; 
+    }); */
+    $('#tj').click(function() {
+        if (ok1 == 'true' && ok2 == 'true' && ok3 == 'true' && ok4 == 'true') {
+            $('#myreg').ajaxSubmit(options);
+        } else {
+            $("#msg").text('请重新填写');
+        }
+        //alert($('#myreg').formSerialize());
+        return false;
+
     });
     $('#login').click(function() {
         $('#mylogin_1').ajaxSubmit(options1);
@@ -506,6 +619,8 @@ $(document).ready(function() {
     });
 });
 
+=======
+>>>>>>> origin/master
 
 function showRequest(formData, jqForm, options) {
     //var queryString = $.param(formData); 
