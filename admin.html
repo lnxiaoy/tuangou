@@ -395,9 +395,6 @@ $.getJSON('res/product.json', function(json, textStatus) {
         $("#page_info").find('span').eq(1).text(Math.ceil((index + 1) / 12));
 
         page = Math.ceil((index + 1) / 12);
-
-<<<<<<< HEAD
-=======
     });
 
     for (var i = 1; i <= page; i++) {
@@ -498,15 +495,11 @@ $(document).ready(function() {
         }
         //alert($('#myreg').formSerialize());
         return false;
-
->>>>>>> origin/master
     });
     $('#login').click(function() {
         $('#mylogin_1').ajaxSubmit(options1);
         //alert($('#myreg').formSerialize());
         return false;
-
-<<<<<<< HEAD
     for (var i = 1; i <= page; i++) {
         $(".pagination>li").eq('-1').before('<li><a href="#">' + i + '</a></li>');
     };
@@ -553,16 +546,14 @@ $("input[name='repass']").focus(function(event) {
         $(this).parent().attr('class', 'has-error form-group has-feedback')
         $(this).next('span').attr('class', 'glyphicon glyphicon-remove form-control-feedback');
     }
-=======
     });
->>>>>>> origin/master
+
 });
 $("input[name='email']").focus(function(event) {
     $(this).prev("span").attr('class', 'text-primary');
 }).blur(function(event) {
     var reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
-<<<<<<< HEAD
     if (reg.test($(this).val())) {
         $(this).parent().attr('class', 'has-success form-group has-feedback');
         $(this).next('span').attr('class', 'glyphicon glyphicon-ok form-control-feedback');
@@ -618,9 +609,6 @@ $(document).ready(function() {
 
     });
 });
-
-=======
->>>>>>> origin/master
 
 function showRequest(formData, jqForm, options) {
     //var queryString = $.param(formData); 
