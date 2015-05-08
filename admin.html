@@ -36,7 +36,6 @@
         padding-top: 5px;
         padding-left: 20px;
     }
-<<<<<<< HEAD
     
     .list-group-item.active {
         width: 200px;
@@ -61,12 +60,6 @@
 </head>
 
 <body>
-=======
-    </style>
-</head>
-
-<body >
->>>>>>> master
     <nav class="navbar navbar-default">
         <div class="container">
             <ul class="navbar-nav nav navavr-left">
@@ -75,7 +68,6 @@
                 <li><a href=""><span class="glyphicon-search glyphicon"></span>&nbsp;团购券查询</a></li>
             </ul>
             <ul class="navbar-right navbar-nav nav">
-<<<<<<< HEAD
                 <li id="nav_log"><a href="#mylogin" data-toggle="modal">登陆</a></li>
                 <div class="modal fade" id="mylogin">
                     <div class="modal-dialog">
@@ -142,10 +134,6 @@
                         </div>
                     </div>
                 </div>
-=======
-                <li><a href="">登陆</a></li>
-                <li><a href="">注册</a></li>
->>>>>>> master
                 <li class="dropdown"><a class="dropdown-toggle" href="" data-toggle="dropdown">&nbsp;最近浏览<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="">123</a></li>
@@ -167,24 +155,6 @@
             </ul>
         </div>
     </nav>
-<<<<<<< HEAD
-=======
-    <div class="container carousel slide" data-interval="2000" data-ride="carousel" id="carousel-container">
-        <div class="carousel-inner bg-info">
-            <div class="item">
-                <button class="close">&times;</button><img height="100" src="img/01.jpg"></div>
-            <div class="item ">
-                <button class="close">&times;</button><img height="100" src="img/02.jpg"></div>
-            <div class="item active">
-                <button class="close">&times;</button><img height="100" src="img/03.jpg"></div>
-        </div>
-        <ol class="carousel-indicators" style="height:0px;">
-            <li data-slide-to="0" data-target="#carousel-container"></li>
-            <li data-slide-to="1" data-target="#carousel-container"></li>
-            <li data-slide-to="2" data-target="#carousel-container" class="active"></li>
-        </ol>
-    </div>
->>>>>>> master
     <div class="container">
         <div class="row">
             <div class="h1 text-info col-md-3">LOGO团购演示</div>
@@ -229,11 +199,7 @@
         </div>
     </div>
     <nav class="navbar-default navbar container">
-<<<<<<< HEAD
         <div class="col-md-3" id="nav1"><a href="" data-toggle="dropdown" class="dropdown-toggle navbar-brand">全部分类</a>
-=======
-        <div class="col-md-3 open"><a href="" data-toggle="dropdown" class="dropdown-toggle navbar-brand">全部分类</a>
->>>>>>> master
             <div class="dropdown-menu list-group table" style="position:absolute;top:48px;">
                 <dl class="table1">
                     <dt><span class="glyphicon glyphicon-tint"></span>&nbsp;<strong>美食</strong></dt>
@@ -282,7 +248,6 @@
             <li><a href="">团购论坛</a></li>
         </ul>
     </nav>
-<<<<<<< HEAD
     <div class="container">
         <div class="col-md-3" style="border-right:1px solid #ccc;">
             <div class="container col-md-8 list-group">
@@ -431,6 +396,8 @@ $.getJSON('res/product.json', function(json, textStatus) {
 
         page = Math.ceil((index + 1) / 12);
 
+<<<<<<< HEAD
+=======
     });
 
     for (var i = 1; i <= page; i++) {
@@ -532,6 +499,117 @@ $(document).ready(function() {
         //alert($('#myreg').formSerialize());
         return false;
 
+>>>>>>> origin/master
+    });
+    $('#login').click(function() {
+        $('#mylogin_1').ajaxSubmit(options1);
+        //alert($('#myreg').formSerialize());
+        return false;
+
+<<<<<<< HEAD
+    for (var i = 1; i <= page; i++) {
+        $(".pagination>li").eq('-1').before('<li><a href="#">' + i + '</a></li>');
+    };
+    $(".pagination>li").eq('1').attr("class", "active");
+});
+
+var ok1 = 'false';
+var ok2 = 'false';
+var ok3 = 'false';
+var ok4 = 'false';
+
+$("input[name='username']").focus(function(event) {
+    $(this).prev("span").attr('class', 'text-primary');
+}).blur(function(event) {
+    if ($(this).val().length >= 3 && $(this).val().length <= 20 && $(this).val() != '') {
+        $(this).parent().attr('class', 'has-success form-group has-feedback');
+        $(this).next('span').attr('class', 'glyphicon glyphicon-ok form-control-feedback');
+        ok1 = 'true';
+    } else {
+        $(this).parent().attr('class', 'has-error form-group has-feedback')
+        $(this).next('span').attr('class', 'glyphicon glyphicon-remove form-control-feedback');
+    }
+});
+$("input[name='password']").focus(function(event) {
+    $(this).prev("span").attr('class', 'text-primary');
+}).blur(function(event) {
+    if ($(this).val().length >= 6 && $(this).val().length <= 20 && $(this).val() != '') {
+        $(this).parent().attr('class', 'has-success form-group has-feedback');
+        $(this).next('span').attr('class', 'glyphicon glyphicon-ok form-control-feedback');
+        ok2 = 'true';
+    } else {
+        $(this).parent().attr('class', 'has-error form-group has-feedback')
+        $(this).next('span').attr('class', 'glyphicon glyphicon-remove form-control-feedback');
+    }
+});
+$("input[name='repass']").focus(function(event) {
+    $(this).prev("span").attr('class', 'text-primary');
+}).blur(function(event) {
+    if ($(this).val() == $("input[name='password']").val()) {
+        $(this).parent().attr('class', 'has-success form-group has-feedback');
+        $(this).next('span').attr('class', 'glyphicon glyphicon-ok form-control-feedback');
+        ok3 = 'true';
+    } else {
+        $(this).parent().attr('class', 'has-error form-group has-feedback')
+        $(this).next('span').attr('class', 'glyphicon glyphicon-remove form-control-feedback');
+    }
+=======
+    });
+>>>>>>> origin/master
+});
+$("input[name='email']").focus(function(event) {
+    $(this).prev("span").attr('class', 'text-primary');
+}).blur(function(event) {
+    var reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+<<<<<<< HEAD
+    if (reg.test($(this).val())) {
+        $(this).parent().attr('class', 'has-success form-group has-feedback');
+        $(this).next('span').attr('class', 'glyphicon glyphicon-ok form-control-feedback');
+        ok4 = 'true';
+    } else {
+        $(this).parent().attr('class', 'has-error form-group has-feedback')
+        $(this).next('span').attr('class', 'glyphicon glyphicon-remove form-control-feedback');
+    }
+});
+
+
+$(document).ready(function() {
+    var options = {
+        target: '#msg',
+        beforeSubmit: showRequest,
+        success: showResponse,
+        dataType: 'json',
+        resetForm: true
+    };
+    var options1 = {
+        target: '#msg_log',
+        beforeSubmit: showRequest,
+        success: bbb,
+        dataType: 'json',
+        resetForm: true
+
+    };
+
+    // bind to the form's submit event 
+    /*$('#myreg').submit(function() { 
+        // inside event callbacks 'this' is the DOM element so we first 
+        // wrap it in a jQuery object and then invoke ajaxSubmit 
+        $(this).ajaxSubmit(options); 
+ 
+        // !!! Important !!! 
+        // always return false to prevent standard browser submit and page navigation 
+        return false; 
+    }); */
+    $('#tj').click(function() {
+        if (ok1 == 'true' && ok2 == 'true' && ok3 == 'true' && ok4 == 'true') {
+            $('#myreg').ajaxSubmit(options);
+        } else {
+            $("#msg").text('请重新填写');
+        }
+        //alert($('#myreg').formSerialize());
+        return false;
+
     });
     $('#login').click(function() {
         $('#mylogin_1').ajaxSubmit(options1);
@@ -541,6 +619,8 @@ $(document).ready(function() {
     });
 });
 
+=======
+>>>>>>> origin/master
 
 function showRequest(formData, jqForm, options) {
     //var queryString = $.param(formData); 
@@ -624,256 +704,6 @@ $.ajax({
     console.log("complete");
 });
 });
-=======
-    <div class="container" style="background-color:#;">
-        <div class="col-md-7 col-md-offset-3" style="background-color:#;">
-            <span class="glyphicon glyphicon-tint"></span>&nbsp;&nbsp;热门团购：<a href="">电影</a>&nbsp;&nbsp;<a href="">甜品饮品</a>&nbsp;&nbsp;<a href="">外卖</a>&nbsp;&nbsp;<a href="">配镜</a>&nbsp;&nbsp;<a href="">电器/数码</a>&nbsp;&nbsp;<a href="">境外游</a>&nbsp;&nbsp;<a href="">酒店</a>&nbsp;&nbsp;<a href="">抽奖</a>&nbsp;&nbsp;<a href=""><a href="">丽人</a>&nbsp;&nbsp;<a href="">电子代金券</a>&nbsp;&nbsp;<a href="">青年旅舍</a>
-            <hr>
-            <span class="glyphicon glyphicon-tint"></span>&nbsp;&nbsp;热门团购：<a href="">电影</a>&nbsp;&nbsp;<a href="">甜品饮品</a>&nbsp;&nbsp;<a href="">外卖</a>&nbsp;&nbsp;<a href="">配镜</a>&nbsp;&nbsp;<a href="">电器/数码</a>&nbsp;&nbsp;<a href="">境外游</a>&nbsp;&nbsp;<a href="">酒店</a>&nbsp;&nbsp;<a href="">抽奖</a>&nbsp;&nbsp;<a href=""><a href="">丽人</a>&nbsp;&nbsp;<a href="">电子代金券</a>&nbsp;&nbsp;<a href="">青年旅舍</a>
-            <hr>
-            <span class="glyphicon glyphicon-tint"></span>&nbsp;&nbsp;热门团购：<a href="">电影</a>&nbsp;&nbsp;<a href="">甜品饮品</a>&nbsp;&nbsp;<a href="">外卖</a>&nbsp;&nbsp;<a href="">配镜</a>&nbsp;&nbsp;<a href="">电器/数码</a>&nbsp;&nbsp;<a href="">境外游</a>&nbsp;&nbsp;<a href="">酒店</a>&nbsp;&nbsp;<a href="">抽奖</a>&nbsp;&nbsp;<a href=""><a href="">丽人</a>&nbsp;&nbsp;<a href="">电子代金券</a>&nbsp;&nbsp;<a href="">青年旅舍</a>
-            <hr>
-            <h4>本周推荐团购</h4>
-            <div class="carousel slide" data-ride="carousel" id="carou" data-interval="2000">
-                <div class="carousel-inner">
-                    <div class="item active ">
-                        <div class="thumbnail col-md-6">
-                            <a href="">
-                                <img src="img/tree.jpg">
-                                <div class="caption">
-                                    <h4>【限时抢购】100元代金券</h4>
-                                    <h4 class="text-danger pull-right">￥79     购买</h4>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="thumbnail col-md-6 ">
-                            <a href="">
-                                <img src="img/tree.jpg">
-                                <div class="caption">
-                                    <h4>【限时抢购】100元代金券</h4>
-                                    <h4 class="text-danger pull-right">￥79     购买</h4>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item  ">
-                        <div class="thumbnail col-md-6">
-                            <a href="">
-                                <img src="img/tree.jpg">
-                                <div class="caption">
-                                    <h4>【限时抢购】100元代金券</h4>
-                                    <h4 class="text-danger pull-right">￥79     购买</h4>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="thumbnail col-md-6 ">
-                            <a href="">
-                                <img src="img/tree.jpg">
-                                <div class="caption">
-                                    <h4>【限时抢购】100元代金券</h4>
-                                    <h4 class="text-danger pull-right">￥79     购买</h4>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item  ">
-                        <div class="thumbnail col-md-6">
-                            <a href="">
-                                <img src="img/tree.jpg">
-                                <div class="caption">
-                                    <h4>【限时抢购】100元代金券</h4>
-                                    <h4 class="text-danger pull-right">￥79     购买</h4>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="thumbnail col-md-6 ">
-                            <a href="">
-                                <img src="img/tree.jpg">
-                                <div class="caption">
-                                    <h4>【限时抢购】100元代金券</h4>
-                                    <h4 class="text-danger pull-right">￥79     购买</h4>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <ol class="carousel-indicators" style="position:absolute;top:-30px;left:600px;">
-                    <li data-slide-to="0" data-target="#carou" class="active"></li>
-                    <li data-slide-to="1" data-target="#carou"></li>
-                    <li data-slide-to="2" data-target="#carou"></li>
-                </ol>
-                <a class="carousel-control left" href="#carou" data-slide="prev"><span class="glyphicon-chevron-left glyphicon"></span></a>
-                <a class="carousel-control right" style="z-index:19;" href="#carou" data-slide="next"><span class="glyphicon-chevron-right glyphicon"></span></a>
-            </div>
-        </div>
-        <div class="col-md-2 col-md-offset-10" style="position:absolute;left:-80px;border:1px solid rgba(0,0,0,0.15);height:100px;width:200px;background-color:#fff">
-          <button class="btn-default btn center-block" style="background-color:#ff668f;margin-top:10px;">4月24日签到</button>
-          <a href="" ><p style="margin:10px 0 0 36px;">查看积分规则</p></a>
-        </div>
-        <div class="col-md-10">
-            <img src="img/clouds.jpg">
-            <img src="img/clouds.jpg">
-            <img src="img/clouds.jpg">
-        </div>
-        <div class="col-md-10">
-            <span style="font-size:24px;">外卖</span>
-            <span class="pull-right"><a href="" class="btn">面包</a><em>|</em><a href="" class="btn">日韩料理</a><em>|</em><a href="" class="btn">西餐</a><em>|</em><a href="" class="btn">快餐</a><em>|</em><a href="" class="btn">特色小吃</a></span>
-            <hr style="margin-top: 5px;">
-            <div class="col-md-4">
-                <div class="thumbnail" style="height:370px;">
-                    <a href="">
-                        <img src="img/tree.jpg">
-                        <div class="caption">
-                            <strong style="font-size:16px;color:#333;">咖喱鸡肉简装套餐</strong>
-                            <br>
-                            <p style="color:#999;font-size:12px;">咖喱鸡肉套餐，米饭一份，小菜一份，主菜一份</p>
-                            <p style="color:#f76120;font-size:40px;float:left;">¥1</p>
-                            <span style="float:left;color:#999;margin-left:10px;">原价:</span>
-                            <span style="text-decoration:line-through;color:#999">123</span>
-                            <div style="height:33px;color:#999;background-color:#fafafa;margin:0px;padding:7px 0 0 15px;border-top:1px solid #f3f3f3;clear:both;font-size:12px;">
-                                <span style="padding:0px;margin:0px;">已售</span>
-                                <span style="color:#f76120;">123123</span>
-                                <span class="pull-right">分</span>
-                                <span style="color:#f76120;" class="pull-right">1</span>
-                                <span class="pull-right">条评价</span>
-                                <span style="color:#f76120;" class="pull-right">1</span>
-                            </div>
-                        </div>
-                </div>
-                </a>
-            </div>            <div class="col-md-4">
-                <div class="thumbnail" style="height:370px;">
-                    <a href="">
-                        <img src="img/tree.jpg">
-                        <div class="caption">
-                            <strong style="font-size:16px;color:#333;">咖喱鸡肉简装套餐</strong>
-                            <br>
-                            <p style="color:#999;font-size:12px;">咖喱鸡肉套餐，米饭一份，小菜一份，主菜一份</p>
-                            <p style="color:#f76120;font-size:40px;float:left;">¥1</p>
-                            <span style="float:left;color:#999;margin-left:10px;">原价:</span>
-                            <span style="text-decoration:line-through;color:#999">123</span>
-                            <div style="height:33px;color:#999;background-color:#fafafa;margin:0px;padding:7px 0 0 15px;border-top:1px solid #f3f3f3;clear:both;font-size:12px;">
-                                <span style="padding:0px;margin:0px;">已售</span>
-                                <span style="color:#f76120;">123123</span>
-                                <span class="pull-right">分</span>
-                                <span style="color:#f76120;" class="pull-right">1</span>
-                                <span class="pull-right">条评价</span>
-                                <span style="color:#f76120;" class="pull-right">1</span>
-                            </div>
-                        </div>
-                </div>
-                </a>
-            </div>            <div class="col-md-4">
-                <div class="thumbnail" style="height:370px;">
-                    <a href="">
-                        <img src="img/tree.jpg">
-                        <div class="caption">
-                            <strong style="font-size:16px;color:#333;">咖喱鸡肉简装套餐</strong>
-                            <br>
-                            <p style="color:#999;font-size:12px;">咖喱鸡肉套餐，米饭一份，小菜一份，主菜一份</p>
-                            <p style="color:#f76120;font-size:40px;float:left;">¥1</p>
-                            <span style="float:left;color:#999;margin-left:10px;">原价:</span>
-                            <span style="text-decoration:line-through;color:#999">123</span>
-                            <div style="height:33px;color:#999;background-color:#fafafa;margin:0px;padding:7px 0 0 15px;border-top:1px solid #f3f3f3;clear:both;font-size:12px;">
-                                <span style="padding:0px;margin:0px;">已售</span>
-                                <span style="color:#f76120;">123123</span>
-                                <span class="pull-right">分</span>
-                                <span style="color:#f76120;" class="pull-right">1</span>
-                                <span class="pull-right">条评价</span>
-                                <span style="color:#f76120;" class="pull-right">1</span>
-                            </div>
-                        </div>
-                </div>
-                </a>
-            </div>            <div class="col-md-4">
-                <div class="thumbnail" style="height:370px;">
-                    <a href="">
-                        <img src="img/tree.jpg">
-                        <div class="caption">
-                            <strong style="font-size:16px;color:#333;">咖喱鸡肉简装套餐</strong>
-                            <br>
-                            <p style="color:#999;font-size:12px;">咖喱鸡肉套餐，米饭一份，小菜一份，主菜一份</p>
-                            <p style="color:#f76120;font-size:40px;float:left;">¥1</p>
-                            <span style="float:left;color:#999;margin-left:10px;">原价:</span>
-                            <span style="text-decoration:line-through;color:#999">123</span>
-                            <div style="height:33px;color:#999;background-color:#fafafa;margin:0px;padding:7px 0 0 15px;border-top:1px solid #f3f3f3;clear:both;font-size:12px;">
-                                <span style="padding:0px;margin:0px;">已售</span>
-                                <span style="color:#f76120;">123123</span>
-                                <span class="pull-right">分</span>
-                                <span style="color:#f76120;" class="pull-right">1</span>
-                                <span class="pull-right">条评价</span>
-                                <span style="color:#f76120;" class="pull-right">1</span>
-                            </div>
-                        </div>
-                </div>
-                </a>
-            </div>            <div class="col-md-4">
-                <div class="thumbnail" style="height:370px;">
-                    <a href="">
-                        <img src="img/tree.jpg">
-                        <div class="caption">
-                            <strong style="font-size:16px;color:#333;">咖喱鸡肉简装套餐</strong>
-                            <br>
-                            <p style="color:#999;font-size:12px;">咖喱鸡肉套餐，米饭一份，小菜一份，主菜一份</p>
-                            <p style="color:#f76120;font-size:40px;float:left;">¥1</p>
-                            <span style="float:left;color:#999;margin-left:10px;">原价:</span>
-                            <span style="text-decoration:line-through;color:#999">123</span>
-                            <div style="height:33px;color:#999;background-color:#fafafa;margin:0px;padding:7px 0 0 15px;border-top:1px solid #f3f3f3;clear:both;font-size:12px;">
-                                <span style="padding:0px;margin:0px;">已售</span>
-                                <span style="color:#f76120;">123123</span>
-                                <span class="pull-right">分</span>
-                                <span style="color:#f76120;" class="pull-right">1</span>
-                                <span class="pull-right">条评价</span>
-                                <span style="color:#f76120;" class="pull-right">1</span>
-                            </div>
-                        </div>
-                </div>
-                </a>
-            </div>
-        </div>
-    </div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-</body>
-<script type="text/javascript">
-$(".close").on('click', function(event) {
-    $("#carousel-container").hide();
-});
-$(".table1").on('mouseover', function(event) {
-    //alert("1")
-    $(".side1").show();
-});
-$(".table1").on('mouseout', function(event) {
-    //alert("1")
-    $(".side1").hide();
-});
-$(".table2").on('mouseover', function(event) {
-    //alert("1")
-    $(".side2").show();
-});
-$(".table2").on('mouseout', function(event) {
-    //alert("1")
-    $(".side2").hide();
-});
-$(".table3").on('mouseover', function(event) {
-    //alert("1")
-    $(".side3").show();
-});
-$(".table3").on('mouseout', function(event) {
-    //alert("1")
-    $(".side3").hide();
-});
-$(".table4").on('mouseover', function(event) {
-    //alert("1")
-    $(".side4").show();
-});
-$(".table4").on('mouseout', function(event) {
-    //alert("1")
-    $(".side4").hide();
-});
->>>>>>> master
 </script>
 
 </html>

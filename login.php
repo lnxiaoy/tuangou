@@ -1,0 +1,1 @@
+<?php  echo '{ "login_name": "' . $_POST['login_name'] . '" }';  ?>
